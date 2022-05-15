@@ -37,10 +37,10 @@ before_action :set_article, only: [:show, :edit , :update, :destroy]
   private
   
   def article_params
-    params.require(:article).permit(:title ,:body)
+    params.require(:article).permit(:title ,:body ,:status)
   end
 
   def set_article
-    @article = Article.find(:params[:id])
+    @article = Article.find(params[:id])
   end
 end
